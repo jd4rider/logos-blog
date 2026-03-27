@@ -30,6 +30,7 @@ const imageURL = new URL(image, Astro.site ?? Astro.url);
 />
 <meta name="generator" content={Astro.generator} />
 <meta name="theme-color" content="#06111c" />
+<meta name="robots" content="index,follow" />
 
 <!-- Font preloads -->
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
@@ -45,6 +46,7 @@ const imageURL = new URL(image, Astro.site ?? Astro.url);
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
+<meta property="og:site_name" content="Logos AI Blog" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />

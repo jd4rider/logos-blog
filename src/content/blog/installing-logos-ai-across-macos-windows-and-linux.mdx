@@ -1,0 +1,31 @@
+---
+title: Installing Logos AI across macOS, Windows, and Linux
+description: "Logos AI is being packaged so normal users can install it with familiar desktop installers while technical users still get Homebrew, Scoop, and shell options."
+pubDate: 2026-03-26
+heroImage: ../../assets/blog-placeholder-1.jpg
+---
+
+The release target for Logos AI is simple: the desktop app and the `logos` CLI should install together instead of feeling like two unrelated downloads.
+
+That means the public release surface needs two kinds of delivery:
+
+- native installers for people who just want to double-click something normal
+- package-manager and shell installs for people who prefer that route
+
+The native path is straightforward:
+
+- macOS should get a `.pkg`
+- Windows should get a standard `.exe`
+- Ubuntu-class Linux should get a `.deb`
+
+Those are the formats that feel familiar to non-technical users. They also make it possible to install both the desktop app and the CLI together in one flow.
+
+For technical users, the secondary path still matters:
+
+- Homebrew for macOS
+- Scoop for Windows
+- `install.sh` for macOS and Linux
+
+That split matters because Bible software does not have one kind of user. Some people want a package manager. Some people want one file they can double-click and forget about.
+
+The docs site now covers both paths so the release story stays clear instead of forcing everyone into the terminal.

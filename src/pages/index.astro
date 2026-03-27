@@ -16,29 +16,29 @@ const posts = (await getCollection('blog')).sort(
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body>
-		<Header />
-		<main>
-			<h1>Writing about Bible software that people will actually use.</h1>
-			<p>
-				The Logos AI blog exists to explain product direction, offline-first reasoning, BYOK strategy, release
-				notes, and the practical side of building AI Bible study tools that feel trustworthy.
-			</p>
-			<p>
-				The product principle is simple: keep the free core useful, use the browser as the on-ramp, and charge
-				for convenience instead of charging for the entire point of the app.
-			</p>
-			<h2>Latest posts</h2>
-			<ul>
-				{posts.map((post) => (
-					<li>
-						<a href={`/blog/${post.id}/`}>{post.data.title}</a>
-					</li>
-				))}
-			</ul>
-			<p>
-				For product docs and setup help, head to <a href="https://docs.logos-ai.online">docs.logos-ai.online</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+			<Header />
+			<main>
+				<h1>Writing about Bible software that people will actually use.</h1>
+				<p>
+					The Logos AI blog covers installation, release packaging, API.Bible setup, Ollama, offline workflows,
+					and the practical side of shipping Bible study software across web and desktop.
+				</p>
+				<p>
+					This is where longer-form thinking lives while the main site stays focused on reading, downloads, and
+					getting people into the product quickly.
+				</p>
+				<h2>Latest posts</h2>
+				<ul>
+					{posts.map((post) => (
+						<li>
+							<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+						</li>
+					))}
+				</ul>
+				<p>
+					For setup help and install instructions, head to <a href="https://docs.logos-ai.online">docs.logos-ai.online</a>.
+				</p>
+			</main>
+			<Footer />
+		</body>
+	</html>

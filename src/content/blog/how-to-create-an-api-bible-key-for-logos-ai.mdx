@@ -1,0 +1,21 @@
+---
+title: How to create an API.Bible key for Logos AI
+description: "If you want live Bible content in Logos AI, the API.Bible setup takes only a few minutes once you know where to click."
+pubDate: 2026-03-26
+heroImage: ../../assets/blog-placeholder-2.jpg
+---
+
+If you want the live web reader or any API.Bible-backed flows in Logos AI, the setup is short:
+
+1. Create an account at API.Bible.
+2. Create an application in the API.Bible dashboard.
+3. Copy the generated API key.
+4. Place that key into the Logos AI environment or repo secret where the reader expects it.
+
+The reason this matters is practical. The browser reader needs a live Bible source that people can try immediately, and API.Bible is the cleanest way to make that experience work.
+
+For local development, that key belongs in a local `.env` file.
+
+For GitHub-hosted builds, the key should be injected through the repository secret used during the Astro build step.
+
+The docs now include the exact setup flow, the expected environment variables, and where those values go in the web project. That keeps the public setup clean instead of forcing people to guess at the dashboard steps.
