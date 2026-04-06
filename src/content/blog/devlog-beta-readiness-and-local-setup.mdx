@@ -1,0 +1,37 @@
+---
+title: "Devlog: local setup, installers, and beta readiness"
+description: "The latest Logos AI devlog covers bundled content, first-run local setup, direct download links, and the work that makes beta testing on real machines possible."
+pubDate: 2026-04-05
+heroImage: ../../assets/blog-placeholder-4.jpg
+---
+
+This devlog is about getting Logos AI from "works on my machine" to "a real person can download this and try it without me sitting beside them."
+
+The current push has four practical goals:
+
+- keep the bundled SQLite library and shipped content central instead of treating the desktop app like a thin shell
+- make Windows, macOS, and Linux downloads feel direct instead of making people hunt through release pages
+- prepare local voice and AI dependencies on first launch when they are not already installed
+- tighten the release filenames so the website can link to stable installer URLs
+
+That matters because Logos AI already ships with a real local payload: SQLite, imported Bible content, commentary, and prebaked read-aloud data. The app is not starting from empty every time someone installs it. The setup work should only handle what is too large, too platform-specific, or too changeable to sensibly embed.
+
+The new local setup flow is aimed at exactly that line:
+
+- keep shipped Bible and commentary data in the app experience
+- create a private Python environment for Kokoro and Piper when needed
+- download Kokoro voice assets when they are missing
+- install and start Ollama when possible
+- pull a smaller local chat model plus an embeddings model for future local search work
+
+That does not magically solve every packaging problem, but it does move the product closer to a real beta surface instead of a developer-only setup.
+
+The public website is also being tightened so people can click straight into:
+
+- a Windows installer
+- a macOS installer
+- a Linux `.deb` or AppImage
+
+That is the difference between a project that sounds promising and a product that can actually get tested across different machines.
+
+The immediate next step is not mass launch. It is a small beta: a handful of real users on different laptops and desktops, different Windows setups, and different comfort levels with local AI. That is where the weak points will show up fastest.
